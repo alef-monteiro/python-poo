@@ -75,6 +75,7 @@ def cadastro_aluno():
     lista_alunos.append(aluno_dados)
     return
 
+
 def mostrar_aluno():
     for i, a in enumerate(lista_alunos):
         print(f'{i} {a.__ref__()}')
@@ -108,18 +109,20 @@ def atualizar_aluno():
 
     for i, _ in enumerate(lista_alunos):
         if valor == i:
-            lista_alunos[i].nome = input('Nome: ')
-            lista_alunos[i].idade = input('Idade: ')
+            lista_alunos[i].set_nome = input('Nome: ')
+            lista_alunos[i].set_idade = input('Idade: ')
+            if lista_cursos is None:
+                print("Vazio")
+            else:
+                print(" > Deseja mudar curso (1/0)\n")
+                a = int(input(' -> '))
 
-            print(" > Deseja mudar curso (1/0)\n")
-            a = int(input(' -> '))
-
-            if a == 0:
-                print("Atualizado!")
-            elif a == 1:
-                lista_alunos[i].curso, lista_alunos[i].turno = atualizar_aluno_curso()
-            elif valor > len(lista_alunos) or valor < 0:
-                print("Erro.")
+                if a == 0:
+                    print("Atualizado!")
+                elif a == 1:
+                    lista_alunos[i].set_curso, lista_alunos[i].set_turno = atualizar_aluno_curso()
+                elif valor > len(lista_alunos) or valor < 0:
+                    print("Erro.")
 
 
         elif valor > len(lista_alunos) or valor < 0:
