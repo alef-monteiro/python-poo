@@ -4,7 +4,8 @@ class Bank:
         # queue is first in, first out
 
     def __str__(self):
-        return str(self.client_list)
+        for i, a in enumerate(self.client_list):
+            return f'{i} - {a}'
 
     def enqueue_clients(self, clients):
         self.client_list.append(clients)
@@ -16,9 +17,6 @@ class Bank:
             return f'Dequeued {len(self.client_list)} clients'
 
         return f'Empty.'
-
-    def show_clients(self):
-        return self.client_list
 
     def queue_empty(self):
         return self.client_list.is_empty()

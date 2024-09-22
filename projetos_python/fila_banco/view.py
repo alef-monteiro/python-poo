@@ -4,6 +4,6 @@ def main_menu():
           f'2 Deposit\n'
           f'3 Withdraw\n'
           f'4 Mount\n'
-          f'5 List of client'
+          f'5 List of client\n'
           f'0 Exit')
 
