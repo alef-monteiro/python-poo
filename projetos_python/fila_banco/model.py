@@ -3,10 +3,6 @@ class Bank:
         self.client_list = []
         # queue is first in, first out
 
-    def __str__(self):
-        for i, a in enumerate(self.client_list):
-            return f'{i} - {a}'
-
     def enqueue_clients(self, clients):
         self.client_list.append(clients)
         return f'Enqueued {len(clients)} clients'

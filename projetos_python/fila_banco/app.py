@@ -9,6 +9,7 @@ if __name__ == '__main__':
         if op == 0:
             break
         menu_options(op)
+        print('\n')
 
 
 
