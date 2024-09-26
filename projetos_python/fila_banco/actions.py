@@ -11,19 +11,14 @@ def account_number_generator(list):
     if serial in list:
         serial += 1
         return serial
-
     return serial
 
 
-def account_verifier(serial):
+def account_verifier(login):
     for a in bank.client_list:
-        if serial == a.account_number:
-            return True
-    return False
-
-def to_deposit(client,value):
-
-
+        if login == a.account_number:
+            return a, True
+    return None, False
 
 
 # Menu Actions
@@ -41,14 +36,31 @@ def menu_options(op):
 
         bank.client_list.append(new_client)
 
-    elif op == 5:
+    elif op == 4:
         print('\n--- Show Clients ---')
         for a in bank.client_list:
             print(a)
+            print("-----------")
 
     elif op == 2:
         print('\n--- Deposit ---')
-        serial = int (input(' -Login: '))
+        login = int(input(' -Login: '))
+        client, verify = account_verifier(login)
+        if verify:
+            deposit = float(input(' -Deposit: $'))
+            client.account_balance = deposit
+            print(f' Done. Your balance: ${client.account_balance}')
+        else:
+            print(' Something went wrong. Please try again.')
 
-        if account_verifier(serial):
-            deposit = float(input("  $"))
+    elif op == 3:
+        print('\n--- Withdraw ---')
+        login = int(input(' -Login: '))
+        client, verify = account_verifier(login)
+        if verify:
+            withdraw = float(input(' -Withdraw: $'))
+            client.account_balance = withdraw*(-1)
+            print(f' Done. Your balance: ${client.account_balance}')
+        else:
+            print(' Something went wrong. Please try again.')
+

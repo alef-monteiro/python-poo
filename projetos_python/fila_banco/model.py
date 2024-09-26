@@ -55,7 +55,6 @@ class Client:
     # Getter para _account_number
     @property
     def account_number(self):
-        print(self._account_number)
         return self._account_number
 
     # Setter para _account_number
