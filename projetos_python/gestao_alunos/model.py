@@ -19,4 +19,6 @@ class School:
             return False
 
     # READ
-    def show_students(self):
+    def show_students(self, **kwargs):
+        for student, grade in self.students.items():
+            print(f'Name: {student} - Grade: {grade}')
