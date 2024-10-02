@@ -1,8 +1,14 @@
+from actions import to_register, to_remove, to_list, to_search, to_update
 from model import School
 from view import main_menu
 
 if __name__ == '__main__':
     school = School()
+
+
+    def exist_student(key):
+        return key in school.students.keys()
+
 
     while True:
         main_menu()
@@ -11,29 +17,15 @@ if __name__ == '__main__':
             break
 
         if choice == 1:
-            print('\n--- Register ---')
-            grades = []
-            name = str(input("Student's name: "))
-            for i in range(0, 3):
-                grade = float(input(f' * '))
-                grades.append(grade)
-
-            name.upper()
-            school.add_student(name, grades)
-            print(f'{name} added.')
+            to_register()
 
         elif choice == 2:
-            print('\n--- Remove ---')
-            name = str(input(" name: "))
-            school.delete_students(name)
+            to_remove()
 
         elif choice == 3:
-            print('\n--- Student List ----')
-            school.show_students()
+            to_search()
 
         elif choice == 4:
-            print('\n--- Search Student ---')
-            name = str(input('name = '))
-            student_search(name)
+            to_update()
 
         print("\n")

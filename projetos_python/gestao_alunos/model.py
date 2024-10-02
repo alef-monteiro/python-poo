@@ -8,17 +8,22 @@ class School:
 
     # DELETE
     def delete_students(self, key):
+        # Apenas perguntar se a chave está dentro do dicionário basta
         del self.students[key]
 
     # UPDATE
     def updating_student(self, name, new_grade):
         if name in self.students:
             self.students[name] = new_grade
-            return True
+            print(f'Updated student {name}')
         else:
-            return False
+            print(f'Student {name} not found')
 
     # READ
     def show_students(self):
-        for student, grade in self.students.items():
-            print(f'Name: {student} - Grade: {grade}')
+        # Sempre verificar se a lista está vazia
+        if not self.students:
+            print("There are no students")
+        else:
+            for student, grades in self.students.items():
+                print(f" Name: {student} - {grades}")
