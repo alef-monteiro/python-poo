@@ -1,4 +1,5 @@
 import database
+import report
 from actions import to_register, to_remove, to_search, to_update, to_list
 from model import School
 from view import main_menu
@@ -36,3 +37,4 @@ if __name__ == '__main__':
         print("\n")
 
     database.view_students()
+    report.generate_report()
