@@ -1,9 +1,11 @@
-from actions import to_register, to_remove, to_list, to_search, to_update
+import database
+from actions import to_register, to_remove, to_search, to_update, to_list
 from model import School
 from view import main_menu
 
 if __name__ == '__main__':
     school = School()
+    database.create_table()
 
 
     def exist_student(key):
@@ -28,4 +30,9 @@ if __name__ == '__main__':
         elif choice == 4:
             to_update()
 
+        elif choice == 5:
+            to_list()
+
         print("\n")
+
+    database.view_students()

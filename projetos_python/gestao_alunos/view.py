@@ -4,4 +4,5 @@ def main_menu():
           f'2 - Remove\n'
           f'3 - Search\n'
           f'4 - Update\n'
+          f'5 - List\n'
           f'0 - Exit\n')

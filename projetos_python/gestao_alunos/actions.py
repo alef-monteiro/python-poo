@@ -11,7 +11,7 @@ def exist_student(key):
 def to_register():
     print('\n--- Register ---')
     grades = []
-    name = str(input("Student's name: "))
+    name = str(input("Name: "))
     print('- grades')
     for i in range(0, 3):
         grade = float(input(f' * '))
@@ -24,7 +24,7 @@ def to_register():
 
 def to_remove():
     print('\n--- Remove ---')
-    name = str(input("name: "))
+    name = str(input("Name: "))
     name = name.upper()
 
     if exist_student(name):
@@ -41,7 +41,7 @@ def to_list():
 
 def to_search():
     print('\n--- Search Student ---')
-    name = str(input('name = '))
+    name = str(input('Name: '))
     name = name.upper()
     if exist_student(name):
         print('Found it.')
@@ -52,7 +52,7 @@ def to_search():
 
 def to_update():
     print('\n--- Update Student ---')
-    name = str(input('Name = '))
+    name = str(input('Name: '))
     name = name.upper()
 
     if exist_student(name):
